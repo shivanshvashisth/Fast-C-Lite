@@ -179,7 +179,8 @@ int main() {
     const startTime = performance.now()
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/compile/", {
+      const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000"
+      const response = await fetch(`${API_URL}/compile/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
